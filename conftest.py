@@ -1,6 +1,5 @@
 """
 Top-level conftest.py does a couple of things:
-
 1) Add cfme_pages repo to the sys.path automatically
 2) Load a number of plugins and fixtures automatically
 """
@@ -88,7 +87,6 @@ def fix_merkyl_workaround():
 @pytest.fixture(scope="session", autouse=True)
 def fix_missing_hostname():
     """Fix for hostname missing from the /etc/hosts file
-
     Note: Affects RHOS-based appliances but can't hurt the others so
           it's applied on all.
     """
@@ -211,6 +209,7 @@ pytest_plugins = (
     'fixtures.widgets',
 
     'markers',
+    'markers.xunit_report',
 
     'cfme.fixtures.base',
     'cfme.fixtures.cli',
